@@ -17,6 +17,7 @@ namespace Epam.MentoringProgram2016.HW1_Types
         public decimal Price { get; set; }
         public int Quantity { get; set; }
 
+        #region Operators overload
         public static bool operator== (Product a, Product b)
         {
             return a.Name == b.Name && a.Price == b.Price;
@@ -26,5 +27,26 @@ namespace Epam.MentoringProgram2016.HW1_Types
         {
             return !(a == b);
         }
+
+        public static bool operator> (Product a, Product b)
+        {
+            return a.Price > b.Price;
+        }
+
+        public static bool operator< (Product a, Product b)
+        {
+            return a.Price < b.Price;
+        }
+
+        public static bool operator>= (Product a, Product b)
+        {
+            return a.Price >= b.Price;
+        }
+
+        public static bool operator<= (Product a, Product b)
+        {
+            return a.Price <= b.Price;
+        }
+        #endregion
     }
 }
