@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// У вас  есть два класса Source и Destination. Между классами передается структура InfoData, содержащая данные о пользователе.
+// Попытайтесь разорвать связь между классами через InfoData (класс Destination ничего не должен знать об этом типе)
+// Оптимизируйте работу с точки зрения быстродействия.
+
 namespace Epam.MentoringProgram2016.HW1_Types
 {
     struct InfoData
@@ -12,21 +16,19 @@ namespace Epam.MentoringProgram2016.HW1_Types
         public string LastName { get; set; }
     }
 
-    class Source
+    public static class Source
     {
-        internal void CheckAndProceed(List<InfoData> data)
+        internal static void CheckAndProceed<T>(List<T> data) where T: struct
         {
-            var dest = new Destination();
-
             //do something
 
-            dest.ProceedData(data);
+            Destination.ProceedData(data);
         }
     }
 
-    class Destination
+    public static class Destination
     {
-        internal void ProceedData(List<InfoData> data)
+        internal static void ProceedData<T>(List<T> data) where T: struct
         {
             foreach (var item in data)
             {
