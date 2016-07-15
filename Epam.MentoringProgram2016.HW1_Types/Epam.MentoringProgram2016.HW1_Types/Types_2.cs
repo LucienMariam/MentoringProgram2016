@@ -16,5 +16,15 @@ namespace Epam.MentoringProgram2016.HW1_Types
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
+
+        public static bool operator== (Product a, Product b)
+        {
+            return a.Name == b.Name && a.Price == b.Price;
+        }
+
+        public static bool operator!= (Product a, Product b)
+        {
+            return !(a == b);
+        }
     }
 }
