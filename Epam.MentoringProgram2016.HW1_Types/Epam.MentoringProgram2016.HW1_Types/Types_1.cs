@@ -16,9 +16,9 @@ namespace Epam.MentoringProgram2016.HW1_Types
         public string LastName { get; set; }
     }
 
-    public static class Source
+    static class Source
     {
-        internal static void CheckAndProceed<T>(List<T> data) where T: struct
+        internal static void CheckAndProceed<T>(List<T> data)
         {
             //do something
 
@@ -26,13 +26,13 @@ namespace Epam.MentoringProgram2016.HW1_Types
         }
     }
 
-    public static class Destination
+    static class Destination
     {
-        internal static void ProceedData<T>(List<T> data) where T: struct
+        internal static void ProceedData<T>(List<T> data)
         {
-            foreach (var item in data)
+            for(int i = 0; i < data.Count; i++)
             {
-                //do something
+                // do something
             }
         }
     }
