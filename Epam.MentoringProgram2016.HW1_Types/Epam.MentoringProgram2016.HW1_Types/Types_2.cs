@@ -27,7 +27,7 @@ namespace Epam.MentoringProgram2016.HW1_Types
             if (obj is Product)
             {
                 Product temp = (Product)obj;
-                return Id == temp.Id;
+                return temp.Equals(this);
             }
 
             else return false;
@@ -35,7 +35,7 @@ namespace Epam.MentoringProgram2016.HW1_Types
 
         public override int GetHashCode()
         {
-            return Id;
+            return Tuple.Create(Id, Id).GetHashCode();
         }
     }
 }
