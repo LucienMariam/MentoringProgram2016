@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Epam.MentoringProgram2016.Homework1.BCL
 {
@@ -9,9 +10,9 @@ namespace Epam.MentoringProgram2016.Homework1.BCL
 
         public BCL_StringSorting(string[] array)
         {
-            if(array == null)
-                throw new NullReferenceException();
-
+            if (array == null || array.Contains(null))
+                throw new ArgumentNullException();
+            
             _array = new List<string>(array);
         }
 
