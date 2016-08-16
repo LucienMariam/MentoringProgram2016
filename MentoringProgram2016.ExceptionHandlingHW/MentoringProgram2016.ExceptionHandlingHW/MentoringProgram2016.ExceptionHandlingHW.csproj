@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D646A3C8-FBD7-4175-9437-1631AE4F93DF}</ProjectGuid>
+    <ProjectGuid>{F3D05B79-0986-4218-BBB5-3149A3BDF343}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Epam.MentoringProgram2016.Homework1</RootNamespace>
-    <AssemblyName>Epam.MentoringProgram2016.Homework1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>MentoringProgram2016.ExceptionHandlingHW</RootNamespace>
+    <AssemblyName>MentoringProgram2016.ExceptionHandlingHW</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,9 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BCL\BCL_CharConcatination.cs" />
-    <Compile Include="BCL\BCL_NullableUsage.cs" />
-    <Compile Include="BCL\BCL_StringSorting.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
