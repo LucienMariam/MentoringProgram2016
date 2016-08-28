@@ -1,26 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
-
 
 namespace Mentoring2016.Reflection
 {
-    class ListTReflectionCreator<T> where T : new()
+    public class ListTReflectionCreator<T>
     {
         public List<T> CreateList()
         {
-            var list = (List<T>)Activator.CreateInstance(typeof(List<T>));
-            Type listElement = list.GetType().GetTypeInfo().GetElementType();
-
-            if (listElement.IsValueType || listElement.IsEquivalentTo(typeof(string)))
-            {
-                for (int i = 0; i < 5; i++)
-                {
-                    list.Add(new T());
-                }
-            }
-
-            return list;
+            return (List<T>)Activator.CreateInstance(typeof(List<T>));
         }
+    }
+
+    public interface Interface
+    {
+        
+    }
+
+    public abstract class AbstractClass: Interface
+    {
+        
+    }
+
+    public struct Structure
+    {
+        
+    }
+
+    public enum Enumeration
+    {
+        
+    }
+
+    public class Class: AbstractClass
+    {
+        
     }
 }

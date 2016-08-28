@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam.MentoringProgram2016.H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentoringProgram2016.ExceptionHandlingHW", "MentoringProgram2016.ExceptionHandlingHW\MentoringProgram2016.ExceptionHandlingHW.csproj", "{6559A95D-9947-4432-AF7C-262D391F760F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentoring2016.Reflection", "Mentoring2016.Reflection\Mentoring2016.Reflection.csproj", "{9F6EA3F5-F8AC-4DAF-9FB2-D9AA0173C658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentoringProgram2016.Reflection.Tests", "MentoringProgram2016.Reflection.Tests\MentoringProgram2016.Reflection.Tests.csproj", "{7D9C2261-327B-40E8-A6E1-D624B40B3C6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{6559A95D-9947-4432-AF7C-262D391F760F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6559A95D-9947-4432-AF7C-262D391F760F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6559A95D-9947-4432-AF7C-262D391F760F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F6EA3F5-F8AC-4DAF-9FB2-D9AA0173C658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6EA3F5-F8AC-4DAF-9FB2-D9AA0173C658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6EA3F5-F8AC-4DAF-9FB2-D9AA0173C658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6EA3F5-F8AC-4DAF-9FB2-D9AA0173C658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D9C2261-327B-40E8-A6E1-D624B40B3C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D9C2261-327B-40E8-A6E1-D624B40B3C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D9C2261-327B-40E8-A6E1-D624B40B3C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D9C2261-327B-40E8-A6E1-D624B40B3C6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
