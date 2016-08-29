@@ -9,7 +9,7 @@ namespace MentoringProgram2016.Reflection.Tests
     public class Hometask2_AddHandlerToClassEvent_Test
     {
         [TestMethod]
-        public void SomeMethod()
+        public void TestRaiseEvent_VerifyMethodCallsRightHandler()
         {
             var friday13EventManager = new Friday13Manager();
             var friday13Handler = new Friday13Handler();
