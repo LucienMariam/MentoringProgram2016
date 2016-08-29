@@ -31,21 +31,29 @@ namespace MentoringProgram2016.Reflection.Tests
             }
         }
 
-        [TestMethod]
-        public void TestList_IsEmpty_IfElementTypeIsInterface()
+        private List<T> ComposeListTWith5ItemsDynamically<T>()
         {
-            var interfaceListCreator = new ListTReflectionCreator<Interface>();
-            List<Interface> list = interfaceListCreator.CreateList();
-            var testClass = new Class();
-            Interface elementToAdd = testClass;
+            var interfaceListCreator = new ListTReflectionCreator<T>();
+            List<T> list = interfaceListCreator.CreateList();
+            T elementToAdd = default(T);
             Type[] genericType = list.GetType().GetGenericArguments();
 
             if (DefineIfTypeMayHaveInstance(genericType[0]))
             {
                 Add5ElementsToList(list, elementToAdd);
             }
+            return list;
+        } 
 
-            int actual = list.Count;  // что быстрее тут отработает Count или Any() ? Ответ: если не предстоит связываться с Итератором, то Count быстрее.
+        private int ReturnNumberOfListTElements<T>()
+        {
+            return ComposeListTWith5ItemsDynamically<T>().Count; // что быстрее тут отработает Count или Any() ? Ответ: если не предстоит связываться с Итератором, то Count быстрее.
+        }
+
+        [TestMethod]
+        public void TestList_IsEmpty_IfElementTypeIsInterface()
+        {
+            int actual = ReturnNumberOfListTElements<Interface>();  
             int expected = 0;
 
             Assert.AreEqual(expected, actual);
@@ -54,113 +62,52 @@ namespace MentoringProgram2016.Reflection.Tests
         [TestMethod]
         public void TestList_IsEmpty_IfElementTypeIsAbstractClass()
         {
-            var interfaceListCreator = new ListTReflectionCreator<AbstractClass>();
-            List<AbstractClass> list = interfaceListCreator.CreateList();
-            var testClass = new Class();
-            AbstractClass elementToAdd = testClass;
-            Type[] genericType = list.GetType().GetGenericArguments();
-
-            if (DefineIfTypeMayHaveInstance(genericType[0]))
-            {
-                Add5ElementsToList(list, elementToAdd);
-            }
-
-            int actual = list.Count;
+            int actual = ReturnNumberOfListTElements<AbstractClass>();
             int expected = 0;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TestList_IsEmpty_IfElementTypeIsStruct()
+        public void TestList_Has5Items_IfElementTypeIsStruct()
         {
-            var interfaceListCreator = new ListTReflectionCreator<Structure>();
-            List<Structure> list = interfaceListCreator.CreateList();
-            Structure itemToAdd;
-            Type[] genericType = list.GetType().GetGenericArguments();
-
-            if (DefineIfTypeMayHaveInstance(genericType[0]))
-            {
-                Add5ElementsToList(list, itemToAdd);
-            }
-
-            int actual = list.Count;
+            int actual = ReturnNumberOfListTElements<Structure>();
             int expected = 5;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TestList_IsEmpty_IfElementTypeIsEnum()
+        public void TestList_Has5Items_IfElementTypeIsEnum()
         {
-            var interfaceListCreator = new ListTReflectionCreator<Enumeration>();
-            List<Enumeration> list = interfaceListCreator.CreateList();
-            var itemToAdd = new Enumeration();
-            Type[] genericType = list.GetType().GetGenericArguments();
-
-            if (DefineIfTypeMayHaveInstance(genericType[0]))
-            {
-                Add5ElementsToList(list, itemToAdd);
-            }
-
-            int actual = list.Count;
+            int actual = ReturnNumberOfListTElements<Enumeration>();
             int expected = 5;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TestList_IsEmpty_IfElementTypeIsClass()
+        public void TestList_Has5Items_IfElementTypeIsClass()
         {
-            var interfaceListCreator = new ListTReflectionCreator<Class>();
-            List<Class> list = interfaceListCreator.CreateList();
-            var itemToAdd = new Class();
-            Type[] genericType = list.GetType().GetGenericArguments();
-
-            if (DefineIfTypeMayHaveInstance(genericType[0]))
-            {
-                Add5ElementsToList(list, itemToAdd);
-            }
-
-            int actual = list.Count;
+            int actual = ReturnNumberOfListTElements<Class>();
             int expected = 5;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TestList_IsEmpty_IfElementTypeIsInt()
+        public void TestList_Has5Items_IfElementTypeIsInt()
         {
-            var interfaceListCreator = new ListTReflectionCreator<int>();
-            List<int> list = interfaceListCreator.CreateList();
-            int itemToAdd = 0;
-            Type[] genericType = list.GetType().GetGenericArguments();
-
-            if (DefineIfTypeMayHaveInstance(genericType[0]))
-            {
-                Add5ElementsToList(list, itemToAdd);
-            }
-
-            int actual = list.Count;
+            int actual = ReturnNumberOfListTElements<int>();
             int expected = 5;
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void TestList_IsEmpty_IfElementTypeIsString()
+        public void TestList_Has5Items_IfElementTypeIsString()
         {
-            var interfaceListCreator = new ListTReflectionCreator<string>();
-            List<string> list = interfaceListCreator.CreateList();
-            string itemToAdd = "";
-            Type[] genericType = list.GetType().GetGenericArguments();
-
-            if (DefineIfTypeMayHaveInstance(genericType[0]))
-            {
-                Add5ElementsToList(list, itemToAdd);
-            }
-
-            int actual = list.Count;
+            int actual = ReturnNumberOfListTElements<string>();
             int expected = 5;
 
             Assert.AreEqual(expected, actual);
