@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Hometask1_CreateListT_Test.cs" />
     <Compile Include="Hometask2_AddHandlerToClassEvent_Test.cs" />
+    <Compile Include="Hometask3_DictionaryWith10Items_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -31,8 +31,8 @@ namespace MentoringProgram2016.Reflection.Tests
 
         private List<T> ComposeListTWith5ItemsDynamically<T>()
         {
-            var interfaceListCreator = new ListTReflectionCreator<T>();
-            List<T> list = interfaceListCreator.CreateList();
+            var listCreator = new ListTReflectionCreator<T>();
+            List<T> list = listCreator.CreateList();
             T elementToAdd = default(T);
             Type[] genericType = list.GetType().GetGenericArguments();
 
